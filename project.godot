@@ -1,0 +1,29 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="RTI"
+run/main_scene="uid://cn20t68lq4r2s"
+config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+RTI="*res://addons/inhumate_rti/RTIConnection.cs"
+RTIUI="*res://addons/inhumate_rti/RTIRuntimeControlUI.tscn"
+
+[dotnet]
+
+project/assembly_name="RTI"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/inhumate_rti/plugin.cfg")

@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccy3q3ocupqia"]
+
+[ext_resource type="Script" uid="uid://cpjvhsnbelhii" path="res://addons/inhumate_rti/RTIRuntimeControlUI.cs" id="1_6qs6u"]
+
+[node name="RtiRuntimeControlUi" type="Control" node_paths=PackedStringArray("ResetButton", "ScenarioDropdown", "LoadButton", "StartButton", "PlayButton", "PauseButton", "StopButton", "StateLabel", "TimeLabel", "TimeScaleDropdown")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6qs6u")
+ResetButton = NodePath("HBoxContainer/Reset")
+ScenarioDropdown = NodePath("HBoxContainer/Scenario")
+LoadButton = NodePath("HBoxContainer/Load")
+StartButton = NodePath("HBoxContainer/Start")
+PlayButton = NodePath("HBoxContainer/Play")
+PauseButton = NodePath("HBoxContainer/Pause")
+StopButton = NodePath("HBoxContainer/Stop")
+StateLabel = NodePath("HBoxContainer/State")
+TimeLabel = NodePath("HBoxContainer/Time")
+TimeScaleDropdown = NodePath("HBoxContainer/TimeScale")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Reset" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "RESET"
+
+[node name="Scenario" type="OptionButton" parent="HBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "SCENARIO A"
+popup/item_0/id = 0
+popup/item_1/text = "SCENARIO BERTHA"
+popup/item_1/id = 1
+
+[node name="Load" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "LOAD"
+
+[node name="Start" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "START"
+
+[node name="Play" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "PLAY"
+
+[node name="Pause" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "PAUSE"
+
+[node name="Stop" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "STOP"
+
+[node name="State" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "STATE"
+
+[node name="Time" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "00:00:00"
+
+[node name="TimeScale" type="OptionButton" parent="HBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "1x"
+popup/item_0/id = 0
+popup/item_1/text = "10x"
+popup/item_1/id = 1
