@@ -11,6 +11,8 @@ cache:
 stages:
   - import-assets
   - export
+  - publish
+  - release
   - deploy
 
 variables:
@@ -62,6 +64,37 @@ package:
     expire_in: 1 week
     paths:
       - inhumate*.zip
+
+publish generic:
+  stage: publish
+  needs:
+    - package
+  image: curlimages/curl:latest
+  only:
+    - tags
+    - /.*publish$/
+  script:
+    - |
+      packages_url="${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/godot-rti/${VERSION}"
+      for file in inhumate*.zip ; do
+        filename=$(basename "$file")
+        curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "$file" "$packages_url/$filename"
+      done
+
+release:
+  stage: release
+  image: registry.gitlab.com/gitlab-org/release-cli:latest
+  only:
+    - tags
+  script:
+    # NOTE: This fails if you first manually created a release in the Gitlab web app (sigh)
+    # see https://gitlab.com/gitlab-org/release-cli/-/issues/94
+    # On another NOTE: the links end up in the reverse order on the releases page.
+    - |
+      packages_url="${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/godot-rti/${VERSION}"
+      release-cli create --name "Version $VERSION" --tag-name $VERSION \
+        --assets-link "{\"name\":\"inhumate-godot-rti-${VERSION}.zip\",\"url\":\"${packages_url}/inhumate-godot-rti-${VERSION}.zip\"}" \
+        ;
 
 # mac:
 #   stage: export

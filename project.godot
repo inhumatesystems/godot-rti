@@ -14,7 +14,7 @@ config/name="GodotRTI"
 config/version="0.0.1-dev-version"
 run/main_scene="uid://blfs8jxwh1843"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
-config/icon="uid://bg0r7voxn108w"
+config/icon="uid://bqbls6hne6qmo"
 
 [autoload]
 
