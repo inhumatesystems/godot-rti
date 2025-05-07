@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvy36nimp26f5"]
+
+[ext_resource type="Script" uid="uid://c3pxlhqihjsch" path="res://addons/inhumate_rti/RTIEntity.cs" id="1_pxus5"]
+[ext_resource type="Script" uid="uid://teixad3ck0r8" path="res://addons/inhumate_rti/RTIPosition.cs" id="2_stkwh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_p4f4d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tl1fj"]
+
+[node name="Box" type="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_p4f4d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_tl1fj")
+
+[node name="RTIEntity" type="Node" parent="."]
+script = ExtResource("1_pxus5")
+Type = "box"
+Size = Vector3(1, 1, 1)
+metadata/_custom_type_script = "uid://c3pxlhqihjsch"
+
+[node name="RTIPosition" type="Node" parent="."]
+script = ExtResource("2_stkwh")
+MinPublishInterval = 0.1
+SetBodyFreeze = true
+metadata/_custom_type_script = "uid://teixad3ck0r8"

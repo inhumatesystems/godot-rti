@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ccy3q3ocupqia"]
 
-[ext_resource type="Script" uid="uid://cpjvhsnbelhii" path="res://addons/inhumate_rti/RTIRuntimeControlUI.cs" id="1_6qs6u"]
+[ext_resource type="Script" uid="uid://cpjvhsnbelhii" path="res://addons/inhumate_rti/RTIRuntimeControlUI.cs" id="1_anun5"]
 
 [node name="RtiRuntimeControlUi" type="Control" node_paths=PackedStringArray("ResetButton", "ScenarioDropdown", "LoadButton", "StartButton", "PlayButton", "PauseButton", "StopButton", "StateLabel", "TimeLabel", "TimeScaleDropdown")]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6qs6u")
+script = ExtResource("1_anun5")
 ResetButton = NodePath("HBoxContainer/Reset")
 ScenarioDropdown = NodePath("HBoxContainer/Scenario")
 LoadButton = NodePath("HBoxContainer/Load")

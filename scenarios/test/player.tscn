@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bich8aux0ejka"]
+
+[ext_resource type="Script" uid="uid://b4geh3x731lmu" path="res://scenarios/test/player.gd" id="1_f1e0o"]
+[ext_resource type="Script" uid="uid://c3pxlhqihjsch" path="res://addons/inhumate_rti/RTIEntity.cs" id="1_q8yd0"]
+[ext_resource type="Script" uid="uid://teixad3ck0r8" path="res://addons/inhumate_rti/RTIPosition.cs" id="3_gegc5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f1e0o"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_q8yd0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q8yd0"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_f1e0o")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(0.5, 0, 0, 0, 0.1, 0, 0, 0, 0.5, 0, 1.5, -0.5)
+mesh = SubResource("BoxMesh_f1e0o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_q8yd0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_q8yd0")
+
+[node name="RTIEntity" type="Node" parent="."]
+script = ExtResource("1_q8yd0")
+Type = "player"
+Center = Vector3(0, 1, 0)
+Size = Vector3(1, 2, 1)
+metadata/_custom_type_script = "uid://c3pxlhqihjsch"
+
+[node name="RTIPosition" type="Node" parent="."]
+script = ExtResource("3_gegc5")
+MinPublishInterval = 0.05
+metadata/_custom_type_script = "uid://teixad3ck0r8"

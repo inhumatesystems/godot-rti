@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdq3lfautndvm"]
+
+[ext_resource type="Script" uid="uid://c3pxlhqihjsch" path="res://addons/inhumate_rti/RTIEntity.cs" id="1_4u3yw"]
+[ext_resource type="Script" uid="uid://teixad3ck0r8" path="res://addons/inhumate_rti/RTIPosition.cs" id="2_lb15x"]
+[ext_resource type="Script" uid="uid://c0iacbadcxr1k" path="res://addons/inhumate_rti/RTIEntityDimensions.cs" id="3_alh3q"]
+[ext_resource type="Script" uid="uid://fa77huirqcie" path="res://addons/inhumate_rti/RTIEntityColor.cs" id="4_u75hy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mxykf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4u3yw"]
+albedo_color = Color(1, 0.160784, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lb15x"]
+material = SubResource("StandardMaterial3D_4u3yw")
+
+[node name="Unknownentity" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_mxykf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_lb15x")
+
+[node name="RTIEntity" type="Node" parent="StaticBody3D"]
+script = ExtResource("1_4u3yw")
+
+[node name="RTIPosition" type="Node" parent="StaticBody3D"]
+script = ExtResource("2_lb15x")
+Publish = false
+
+[node name="RTIEntityDimensions" type="Node" parent="StaticBody3D"]
+script = ExtResource("3_alh3q")
+
+[node name="RTIEntityColor" type="Node" parent="StaticBody3D"]
+script = ExtResource("4_u75hy")

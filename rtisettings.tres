@@ -1,27 +1,27 @@
-[gd_resource type="Resource" script_class="RTISettings" load_steps=6 format=3 uid="uid://cvim4g7jpv6qv"]
+[gd_resource type="Resource" script_class="RTISettings" load_steps=6 format=3 uid="uid://c4ry4638p0cvv"]
 
-[ext_resource type="Script" uid="uid://bafyw27prgpb8" path="res://addons/inhumate_rti/RTIScenario.cs" id="1_bl7bn"]
-[ext_resource type="PackedScene" uid="uid://cn20t68lq4r2s" path="res://home.tscn" id="1_gqg3r"]
-[ext_resource type="Script" uid="uid://ccx3brdm2sdun" path="res://addons/inhumate_rti/RTISettings.cs" id="2_3vsh1"]
-[ext_resource type="PackedScene" uid="uid://dpp8cwa1mdqt7" path="res://scenarios/test/test.tscn" id="3_lvfel"]
+[ext_resource type="PackedScene" uid="uid://blfs8jxwh1843" path="res://addons/inhumate_rti/content/defaulthome.tscn" id="1_3vsh1"]
+[ext_resource type="Script" uid="uid://bafyw27prgpb8" path="res://addons/inhumate_rti/RTIScenario.cs" id="2_gqg3r"]
+[ext_resource type="PackedScene" uid="uid://dpp8cwa1mdqt7" path="res://scenarios/test/test.tscn" id="2_lvfel"]
+[ext_resource type="Script" uid="uid://ccx3brdm2sdun" path="res://addons/inhumate_rti/RTISettings.cs" id="3_lvfel"]
 
 [sub_resource type="Resource" id="Resource_1v0yh"]
-script = ExtResource("1_bl7bn")
+script = ExtResource("2_gqg3r")
 Name = "test"
-Scene = ExtResource("3_lvfel")
-Description = ""
+Scene = ExtResource("2_lvfel")
+Description = "A test scenario"
 metadata/_custom_type_script = "uid://bafyw27prgpb8"
 
 [resource]
-script = ExtResource("2_3vsh1")
-HomeScene = ExtResource("1_gqg3r")
-Scenarios = Array[ExtResource("1_bl7bn")]([SubResource("Resource_1v0yh")])
+script = ExtResource("3_lvfel")
+HomeScene = ExtResource("1_3vsh1")
+Scenarios = [SubResource("Resource_1v0yh")]
 AutoConnect = true
 Polling = true
 Url = ""
 Secret = ""
-LateJoin = true
-DebugConnection = true
-DebugChannels = true
-DebugRuntimeControl = true
-DebugEntities = true
+LateJoin = false
+DebugConnection = false
+DebugChannels = false
+DebugRuntimeControl = false
+DebugEntities = false

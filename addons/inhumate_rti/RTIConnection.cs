@@ -25,7 +25,7 @@ namespace Inhumate.GodotRTI {
 		public bool DebugEntities => Settings.DebugEntities;
 
 		public Godot.Collections.Array<RTIScenario> Scenarios = new();
-		public List<string> ScenarioNames { get; set; } = new List<string>();
+		public Godot.Collections.Array<string> ScenarioNames { get; set; } = new();
 		public RTIScenario Scenario { get; private set; }
 		private Godot.Collections.Dictionary<string, string> scenarioParameterValues = new();
 		public string LastScenarioName { get; private set; }
@@ -64,6 +64,7 @@ namespace Inhumate.GodotRTI {
 		public RTIClient Client => rti;
 		private RTIClient rti;
 		public string Application => Client.Application;
+        public string ApplicationVersion => Client.ApplicationVersion;
 		public string ClientId => Client.ClientId;
 
 		public bool Connected => connected;

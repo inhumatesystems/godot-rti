@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://blfs8jxwh1843"]
+
+[ext_resource type="Script" uid="uid://b40okgx7ey2n4" path="res://addons/inhumate_rti/content/defaulthome.gd" id="1_snivw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nvhj7"]
+font_size = 50
+font_color = Color(1, 1, 1, 0.882353)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uy1ie"]
+font_size = 30
+font_color = Color(1, 1, 1, 0.494118)
+
+[sub_resource type="LabelSettings" id="LabelSettings_snivw"]
+font_size = 25
+font_color = Color(1, 0.619608, 0.623529, 1)
+
+[node name="Home" type="Node" node_paths=PackedStringArray("app_label", "version_label", "setup_scenarios_label")]
+script = ExtResource("1_snivw")
+app_label = NodePath("VBoxContainer/app_label")
+version_label = NodePath("VBoxContainer/version_label")
+setup_scenarios_label = NodePath("VBoxContainer/setup_scenarios_label")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -34.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="app_label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "HOME"
+label_settings = SubResource("LabelSettings_nvhj7")
+horizontal_alignment = 1
+
+[node name="version_label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "VERSION"
+label_settings = SubResource("LabelSettings_uy1ie")
+horizontal_alignment = 1
+
+[node name="setup_scenarios_label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Add scenarios in res://rtisettings.tres
+for a more interesting experience."
+label_settings = SubResource("LabelSettings_snivw")
+horizontal_alignment = 1

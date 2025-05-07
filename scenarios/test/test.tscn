@@ -1,13 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpp8cwa1mdqt7"]
+[gd_scene load_steps=6 format=3 uid="uid://dpp8cwa1mdqt7"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_udohs"]
+[ext_resource type="PackedScene" uid="uid://bich8aux0ejka" path="res://scenarios/test/player.tscn" id="1_1rqs8"]
+[ext_resource type="Script" uid="uid://hoghphvwuped" path="res://addons/inhumate_rti/RTISpawner.cs" id="1_d0x35"]
+[ext_resource type="PackedScene" uid="uid://bvy36nimp26f5" path="res://scenarios/test/box.tscn" id="3_xiy35"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1rqs8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1rqs8"]
+size = Vector3(20, 1, 20)
 
 [node name="Test" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_udohs")
-
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.81647, -0.291908, 0.498163, 0, 0.862787, 0.505567, -0.577387, -0.41278, 0.70444, 1.2357, 0.952103, 1.91853)
+transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642787, 0.766044, 0, 5, 10)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_1rqs8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
+shape = SubResource("BoxShape3D_1rqs8")
+
+[node name="RTISpawner" type="Node" parent="." node_paths=PackedStringArray("PlayerSpawnPoints")]
+script = ExtResource("1_d0x35")
+SpawnableEntities = Dictionary[String, PackedScene]({
+"box": ExtResource("3_xiy35")
+})
+Player = ExtResource("1_1rqs8")
+PlayerSpawnPoints = [NodePath("Spawn1")]
+metadata/_custom_type_script = "uid://hoghphvwuped"
+
+[node name="Spawn1" type="Node3D" parent="RTISpawner"]
+
+[node name="Box" parent="." instance=ExtResource("3_xiy35")]
+transform = Transform3D(0.689556, 0.724232, 0, -0.600097, 0.571365, -0.559844, -0.405457, 0.386044, 0.828598, -4.03535, 3.01273, 0.109761)

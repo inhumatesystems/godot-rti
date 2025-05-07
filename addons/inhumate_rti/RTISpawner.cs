@@ -8,12 +8,13 @@ using Godot;
 
 namespace Inhumate.GodotRTI {
 
+    [GlobalClass, Icon("res://addons/inhumate_rti/icons/rti_spawner.svg")]
 	public partial class RTISpawner : Node {
 		public const string SpawnAllocationChannel = "rti/spawn";
 
 		[Export] public Godot.Collections.Dictionary<string, PackedScene> SpawnableEntities = new();
 
-		[Export] public PackedScene Unknown;
+		[Export] public PackedScene Unknown = ResourceLoader.Load<PackedScene>("res://addons/inhumate_rti/content/unknownentity.tscn");
 		[Export] public PackedScene Player;
 
 		[Export] public Godot.Collections.Array<Node3D> PlayerSpawnPoints = new();
