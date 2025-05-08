@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dpp8cwa1mdqt7"]
 
 [ext_resource type="PackedScene" uid="uid://bich8aux0ejka" path="res://scenarios/test/player.tscn" id="1_1rqs8"]
-[ext_resource type="Script" uid="uid://hoghphvwuped" path="res://addons/inhumate_rti/RTISpawner.cs" id="1_d0x35"]
+[ext_resource type="Script" uid="uid://hoghphvwuped" path="res://addons/inhumate_rti/src/RTISpawner.cs" id="1_d0x35"]
 [ext_resource type="PackedScene" uid="uid://bvy36nimp26f5" path="res://scenarios/test/box.tscn" id="3_xiy35"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1rqs8"]

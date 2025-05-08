@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="GodotRTI"
-config/version="0.0.1-dev-version"
+config/version="0.1.0"
 run/main_scene="uid://blfs8jxwh1843"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="uid://bqbls6hne6qmo"
 
 [autoload]
 
-RTI="*res://addons/inhumate_rti/RTIConnection.cs"
+RTI="*res://addons/inhumate_rti/src/RTIConnection.cs"
 RTIUI="*res://addons/inhumate_rti/content/rtiui.tscn"
 
 [dotnet]

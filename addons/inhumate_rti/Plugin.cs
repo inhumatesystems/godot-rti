@@ -6,7 +6,7 @@ namespace Inhumate.GodotRTI {
     [Tool]
     public partial class Plugin : EditorPlugin {
         public override void _EnterTree() {
-            AddAutoloadSingleton("RTI", "res://addons/inhumate_rti/RTIConnection.cs");
+            AddAutoloadSingleton("RTI", "res://addons/inhumate_rti/src/RTIConnection.cs");
             AddAutoloadSingleton("RTIUI", "res://addons/inhumate_rti/content/rtiui.tscn");
             // Check if RTISettings resource exists, create it if it doesn't
             string settingsPath = "res://rtisettings.tres";

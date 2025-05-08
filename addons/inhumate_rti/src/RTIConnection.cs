@@ -16,7 +16,7 @@ namespace Inhumate.GodotRTI {
 
 		// Not to be added to a scene. Add as auto-load.
 
-		public const string IntegrationVersion = "0.0.1-dev-version";
+		public const string IntegrationVersion = "0.1.0";
 
 		public RTISettings Settings = new RTISettings();
 		public bool DebugConnection => Settings.DebugConnection;

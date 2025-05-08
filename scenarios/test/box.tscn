@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvy36nimp26f5"]
 
-[ext_resource type="Script" uid="uid://c3pxlhqihjsch" path="res://addons/inhumate_rti/RTIEntity.cs" id="1_pxus5"]
-[ext_resource type="Script" uid="uid://teixad3ck0r8" path="res://addons/inhumate_rti/RTIPosition.cs" id="2_stkwh"]
+[ext_resource type="Script" uid="uid://c3pxlhqihjsch" path="res://addons/inhumate_rti/src/RTIEntity.cs" id="1_pxus5"]
+[ext_resource type="Script" uid="uid://teixad3ck0r8" path="res://addons/inhumate_rti/src/RTIPosition.cs" id="2_stkwh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p4f4d"]
 

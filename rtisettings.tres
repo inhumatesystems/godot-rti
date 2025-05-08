@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="RTISettings" load_steps=6 format=3 uid="uid://j1vy5bvhg8et"]
 
 [ext_resource type="PackedScene" uid="uid://blfs8jxwh1843" path="res://addons/inhumate_rti/content/defaulthome.tscn" id="1_3vsh1"]
-[ext_resource type="Script" uid="uid://bafyw27prgpb8" path="res://addons/inhumate_rti/RTIScenario.cs" id="2_gqg3r"]
+[ext_resource type="Script" uid="uid://bafyw27prgpb8" path="res://addons/inhumate_rti/src/RTIScenario.cs" id="2_gqg3r"]
 [ext_resource type="PackedScene" uid="uid://dpp8cwa1mdqt7" path="res://scenarios/test/test.tscn" id="3_gqg3r"]
-[ext_resource type="Script" uid="uid://ccx3brdm2sdun" path="res://addons/inhumate_rti/RTISettings.cs" id="3_lvfel"]
+[ext_resource type="Script" uid="uid://ccx3brdm2sdun" path="res://addons/inhumate_rti/src/RTISettings.cs" id="3_lvfel"]
 
 [sub_resource type="Resource" id="Resource_lvfel"]
 script = ExtResource("2_gqg3r")

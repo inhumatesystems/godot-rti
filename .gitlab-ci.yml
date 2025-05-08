@@ -1,8 +1,5 @@
 image: barichello/godot-ci:mono-4.4.1
 
-# NOTE: If your `project.godot` is at the repository root, set `PROJECT_PATH` below to ".".
-
-# Cache imported assets between runs
 cache:
   key: import-assets
   paths:
@@ -29,6 +26,7 @@ default:
 import-assets:
   stage: import-assets
   script:
+    - "[ -z \"${CI_COMMIT_TAG}\" ] || scripts/check_version.sh ${CI_COMMIT_TAG}"
     - godot --headless --verbose --editor --quit
 
 linux:
@@ -58,7 +56,6 @@ windows:
 package:
   stage: export
   script:
-    - sed -i "s/0.0.1-dev-version/${VERSION}/g" project.godot addons/inhumate_rti/plugin.cfg addons/inhumate_rti/RTIConnection.cs
     - zip -r inhumate-godot-rti-${VERSION}.zip addons/inhumate_rti
   artifacts:
     expire_in: 1 week

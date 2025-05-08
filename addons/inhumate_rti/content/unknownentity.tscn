@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://bdq3lfautndvm"]
 
-[ext_resource type="Script" uid="uid://c3pxlhqihjsch" path="res://addons/inhumate_rti/RTIEntity.cs" id="1_4u3yw"]
-[ext_resource type="Script" uid="uid://teixad3ck0r8" path="res://addons/inhumate_rti/RTIPosition.cs" id="2_lb15x"]
-[ext_resource type="Script" uid="uid://c0iacbadcxr1k" path="res://addons/inhumate_rti/RTIEntityDimensions.cs" id="3_alh3q"]
-[ext_resource type="Script" uid="uid://fa77huirqcie" path="res://addons/inhumate_rti/RTIEntityColor.cs" id="4_u75hy"]
+[ext_resource type="Script" uid="uid://c3pxlhqihjsch" path="res://addons/inhumate_rti/src/RTIEntity.cs" id="1_4u3yw"]
+[ext_resource type="Script" uid="uid://teixad3ck0r8" path="res://addons/inhumate_rti/src/RTIPosition.cs" id="2_lb15x"]
+[ext_resource type="Script" uid="uid://c0iacbadcxr1k" path="res://addons/inhumate_rti/src/RTIEntityDimensions.cs" id="3_alh3q"]
+[ext_resource type="Script" uid="uid://fa77huirqcie" path="res://addons/inhumate_rti/src/RTIEntityColor.cs" id="4_u75hy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mxykf"]
 
