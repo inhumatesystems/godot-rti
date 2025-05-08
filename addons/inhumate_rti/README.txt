@@ -1,4 +1,6 @@
-Addon for integrating your Godot-based simulator or application with the RTI (Runtime Infrastructure) of Inhumate Suite. Use it for connecting web-based interfaces, co-simulation, user testing etc.
+Addon for integrating your Godot-based simulator or application with the RTI 
+(Runtime Infrastructure) of Inhumate Suite. Use it for connecting web-based 
+interfaces, co-simulation, user testing etc.
 
 Read more at https://inhumatesystems.com/products/suite/.
 
